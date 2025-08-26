@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Interaktif: Komputer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-8 fade-in">
+            <h1 class="text-4xl font-bold text-indigo-800 mb-2">💻 Belajar Komputer</h1>
+            <p class="text-gray-600 text-lg">Materi Interaktif & Kuis</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-2 flex space-x-2">
+                <button onclick="showSection('materi')" id="btn-materi" class="px-6 py-2 rounded-md bg-indigo-600 text-white font-medium transition-all">
+                    📚 Materi
+                </button>
+                <button onclick="showSection('kuis')" id="btn-kuis" class="px-6 py-2 rounded-md text-indigo-600 hover:bg-indigo-50 font-medium transition-all">
+                    🎯 Kuis
+                </button>
+            </div>
+        </div>
+
+        <!-- Materi Section -->
+        <div id="materi-section" class="fade-in">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <span class="mr-3">🖥️</span>Apa itu Komputer?
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            <strong>Komputer</strong> adalah perangkat elektronik yang dapat menerima, memproses, menyimpan, dan mengeluarkan data secara otomatis berdasarkan instruksi yang diberikan.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg">
+                            <h3 class="font-bold text-green-800 mb-3 flex items-center">
+                                <span class="mr-2">⚡</span>Fungsi Utama
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">•</span>Input (Masukan)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Process (Pemrosesan)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Output (Keluaran)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Storage (Penyimpanan)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg">
+                            <h3 class="font-bold text-purple-800 mb-3 flex items-center">
+                                <span class="mr-2">🔧</span>Komponen Utama
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><span class="mr-2">•</span>Hardware (Perangkat Keras)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Software (Perangkat Lunak)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Brainware (Pengguna)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hardware Section -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <span class="mr-3">🔩</span>Hardware (Perangkat Keras)
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-5 rounded-lg border border-red-200">
+                        <div class="text-3xl mb-3">🖱️</div>
+                        <h3 class="font-bold text-red-800 mb-2">Input Device</h3>
+                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk memasukkan data</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Keyboard</li>
+                            <li>• Mouse</li>
+                            <li>• Microphone</li>
+                            <li>• Scanner</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 p-5 rounded-lg border border-yellow-200">
+                        <div class="text-3xl mb-3">🧠</div>
+                        <h3 class="font-bold text-yellow-800 mb-2">Processing Unit</h3>
+                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk memproses data</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• CPU (Processor)</li>
+                            <li>• RAM (Memory)</li>
+                            <li>• Motherboard</li>
+                            <li>• GPU (VGA Card)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+                        <div class="text-3xl mb-3">🖥️</div>
+                        <h3 class="font-bold text-green-800 mb-2">Output Device</h3>
+                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk mengeluarkan hasil</p>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Monitor</li>
+                            <li>• Printer</li>
+                            <li>• Speaker</li>
+                            <li>• Projector</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Section -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <span class="mr-3">💿</span>Software (Perangkat Lunak)
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <h3 class="font-bold text-blue-800 mb-3 flex items-center">
+                                <span class="mr-2">🏗️</span>System Software
+                            </h3>
+                            <ul class="text-gray-700 space-y-2">
+                                <li class="flex items-center"><span class="mr-2">•</span>Operating System (Windows, macOS, Linux)</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Device Drivers</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Utilities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 p-5 rounded-lg">
+                            <h3 class="font-bold text-orange-800 mb-3 flex items-center">
+                                <span class="mr-2">📱</span>Application Software
+                            </h3>
+                            <ul class="text-gray-700 space-y-2">
+                                <li class="flex items-center"><span class="mr-2">•</span>Microsoft Office</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Web Browser</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Games</li>
+                                <li class="flex items-center"><span class="mr-2">•</span>Media Player</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kuis Section -->
+        <div id="kuis-section" class="hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <span class="mr-3">🎯</span>Kuis Komputer
+                </h2>
+
+                <div id="quiz-container">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-medium text-gray-600">Pertanyaan <span id="current-question">1</span> dari <span id="total-questions">5</span></span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Skor: <span id="score">0</span></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <div id="question-container" class="mb-8">
+                        <h3 id="question-text" class="text-xl font-semibold text-gray-800 mb-6"></h3>
+                        <div id="options-container" class="space-y-3"></div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button id="prev-btn" onclick="previousQuestion()" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition-all disabled:opacity-50" disabled>
+                            ← Sebelumnya
+                        </button>
+                        <button id="next-btn" onclick="nextQuestion()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50" disabled>
+                            Selanjutnya →
+                        </button>
+                    </div>
+                </div>
+
+                <div id="result-container" class="hidden text-center">
+                    <div class="mb-6">
+                        <div id="result-icon" class="text-6xl mb-4"></div>
+                        <h3 id="result-title" class="text-2xl font-bold mb-2"></h3>
+                        <p id="result-message" class="text-gray-600 mb-4"></p>
+                        <div class="bg-gray-50 rounded-lg p-4 inline-block">
+                            <span class="text-lg font-semibold">Skor Akhir: </span>
+                            <span id="final-score" class="text-2xl font-bold text-indigo-600"></span>
+                        </div>
+                    </div>
+                    <button onclick="restartQuiz()" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all">
+                        🔄 Ulangi Kuis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizData = [
+            {
+                question: "Apa kepanjangan dari CPU?",
+                options: ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
+                correct: 0
+            },
+            {
+                question: "Manakah yang termasuk perangkat input?",
+                options: ["Monitor", "Printer", "Keyboard", "Speaker"],
+                correct: 2
+            },
+            {
+                question: "RAM adalah singkatan dari?",
+                options: ["Read Access Memory", "Random Access Memory", "Rapid Access Memory", "Real Access Memory"],
+                correct: 1
+            },
+            {
+                question: "Manakah yang termasuk sistem operasi?",
+                options: ["Microsoft Word", "Windows", "Google Chrome", "Adobe Photoshop"],
+                correct: 1
+            },
+            {
+                question: "Perangkat yang berfungsi untuk menampilkan hasil output adalah?",
+                options: ["Mouse", "Keyboard", "Monitor", "CPU"],
+                correct: 2
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+
+        function showSection(section) {
+            const materiSection = document.getElementById('materi-section');
+            const kuisSection = document.getElementById('kuis-section');
+            const btnMateri = document.getElementById('btn-materi');
+            const btnKuis = document.getElementById('btn-kuis');
+
+            if (section === 'materi') {
+                materiSection.classList.remove('hidden');
+                kuisSection.classList.add('hidden');
+                btnMateri.classList.add('bg-indigo-600', 'text-white');
+                btnMateri.classList.remove('text-indigo-600', 'hover:bg-indigo-50');
+                btnKuis.classList.remove('bg-indigo-600', 'text-white');
+                btnKuis.classList.add('text-indigo-600', 'hover:bg-indigo-50');
+            } else {
+                materiSection.classList.add('hidden');
+                kuisSection.classList.remove('hidden');
+                btnKuis.classList.add('bg-indigo-600', 'text-white');
+                btnKuis.classList.remove('text-indigo-600', 'hover:bg-indigo-50');
+                btnMateri.classList.remove('bg-indigo-600', 'text-white');
+                btnMateri.classList.add('text-indigo-600', 'hover:bg-indigo-50');
+                
+                if (currentQuestionIndex === 0 && userAnswers.length === 0) {
+                    loadQuestion();
+                }
+            }
+        }
+
+        function loadQuestion() {
+            const question = quizData[currentQuestionIndex];
+            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+            document.getElementById('total-questions').textContent = quizData.length;
+            
+            const progressPercent = ((currentQuestionIndex + 1) / quizData.length) * 100;
+            document.getElementById('progress-bar').style.width = progressPercent + '%';
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option-item';
+                optionDiv.innerHTML = `
+                    <button onclick="selectAnswer(${index})" class="w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-indigo-50 transition-all option-btn" data-index="${index}">
+                        <span class="font-medium">${String.fromCharCode(65 + index)}.</span> ${option}
+                    </button>
+                `;
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            // Restore previous answer if exists
+            if (userAnswers[currentQuestionIndex] !== undefined) {
+                selectAnswer(userAnswers[currentQuestionIndex], false);
+            }
+
+            updateNavigationButtons();
+        }
+
+        function selectAnswer(answerIndex, updateArray = true) {
+            // Remove previous selection
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('border-indigo-500', 'bg-indigo-100');
+                btn.classList.add('border-gray-200');
+            });
+
+            // Add selection to clicked option
+            const selectedBtn = document.querySelector(`[data-index="${answerIndex}"]`);
+            selectedBtn.classList.remove('border-gray-200');
+            selectedBtn.classList.add('border-indigo-500', 'bg-indigo-100');
+
+            if (updateArray) {
+                userAnswers[currentQuestionIndex] = answerIndex;
+            }
+
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            prevBtn.disabled = currentQuestionIndex === 0;
+            
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.textContent = 'Selesai 🏁';
+                nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined;
+            } else {
+                nextBtn.textContent = 'Selanjutnya →';
+                nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined;
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function finishQuiz() {
+            // Calculate score
+            score = 0;
+            userAnswers.forEach((answer, index) => {
+                if (answer === quizData[index].correct) {
+                    score++;
+                }
+            });
+
+            document.getElementById('score').textContent = score;
+            document.getElementById('final-score').textContent = `${score}/${quizData.length}`;
+
+            // Show result
+            const resultContainer = document.getElementById('result-container');
+            const quizContainer = document.getElementById('quiz-container');
+            const resultIcon = document.getElementById('result-icon');
+            const resultTitle = document.getElementById('result-title');
+            const resultMessage = document.getElementById('result-message');
+
+            quizContainer.classList.add('hidden');
+            resultContainer.classList.remove('hidden');
+
+            const percentage = (score / quizData.length) * 100;
+
+            if (percentage >= 80) {
+                resultIcon.textContent = '🎉';
+                resultTitle.textContent = 'Luar Biasa!';
+                resultTitle.className = 'text-2xl font-bold mb-2 text-green-600';
+                resultMessage.textContent = 'Anda memiliki pemahaman yang sangat baik tentang komputer!';
+            } else if (percentage >= 60) {
+                resultIcon.textContent = '👍';
+                resultTitle.textContent = 'Bagus!';
+                resultTitle.className = 'text-2xl font-bold mb-2 text-blue-600';
+                resultMessage.textContent = 'Pemahaman Anda tentang komputer cukup baik. Terus belajar!';
+            } else {
+                resultIcon.textContent = '📚';
+                resultTitle.textContent = 'Perlu Belajar Lagi';
+                resultTitle.className = 'text-2xl font-bold mb-2 text-orange-600';
+                resultMessage.textContent = 'Jangan menyerah! Baca kembali materi dan coba lagi.';
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            
+            document.getElementById('result-container').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('score').textContent = '0';
+            
+            loadQuestion();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('materi');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974f183d922e604a',t:'MTc1NjE2NjkwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
