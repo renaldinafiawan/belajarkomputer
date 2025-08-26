@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Interaktif: Komputer</title>
+    <title>Panduan Lengkap Komputer - Dari Nol Hingga Menyala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .fade-in {
@@ -20,145 +20,721 @@
             from { transform: translateX(-20px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
+        .step-line {
+            position: relative;
+        }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            width: 2px;
+            height: calc(100% - 50px);
+            background: linear-gradient(to bottom, #4f46e5, #e5e7eb);
+        }
+        .step-line:last-child::after {
+            display: none;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
         <!-- Header -->
         <div class="text-center mb-8 fade-in">
-            <h1 class="text-4xl font-bold text-indigo-800 mb-2">💻 Belajar Komputer</h1>
-            <p class="text-gray-600 text-lg">Materi Interaktif & Kuis</p>
+            <h1 class="text-5xl font-bold text-slate-800 mb-3">🖥️ Panduan Lengkap Komputer</h1>
+            <p class="text-gray-600 text-xl">Dari Komponen hingga Instalasi & Kuis</p>
         </div>
 
         <!-- Navigation -->
         <div class="flex justify-center mb-8">
-            <div class="bg-white rounded-lg shadow-lg p-2 flex space-x-2">
-                <button onclick="showSection('materi')" id="btn-materi" class="px-6 py-2 rounded-md bg-indigo-600 text-white font-medium transition-all">
-                    📚 Materi
+            <div class="bg-white rounded-xl shadow-lg p-3 flex flex-wrap gap-2 justify-center">
+                <button onclick="showSection('komponen')" id="btn-komponen" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium transition-all text-sm">
+                    🔧 Komponen
                 </button>
-                <button onclick="showSection('kuis')" id="btn-kuis" class="px-6 py-2 rounded-md text-indigo-600 hover:bg-indigo-50 font-medium transition-all">
+                <button onclick="showSection('instalasi')" id="btn-instalasi" class="px-4 py-2 rounded-lg text-indigo-600 hover:bg-indigo-50 font-medium transition-all text-sm">
+                    ⚙️ Instalasi
+                </button>
+                <button onclick="showSection('troubleshoot')" id="btn-troubleshoot" class="px-4 py-2 rounded-lg text-indigo-600 hover:bg-indigo-50 font-medium transition-all text-sm">
+                    🔍 Troubleshoot
+                </button>
+                <button onclick="showSection('kuis')" id="btn-kuis" class="px-4 py-2 rounded-lg text-indigo-600 hover:bg-indigo-50 font-medium transition-all text-sm">
                     🎯 Kuis
                 </button>
             </div>
         </div>
 
-        <!-- Materi Section -->
-        <div id="materi-section" class="fade-in">
+        <!-- Komponen Section -->
+        <div id="komponen-section" class="fade-in">
             <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
-                    <span class="mr-3">🖥️</span>Apa itu Komputer?
+                <h2 class="text-3xl font-bold text-indigo-700 mb-8 flex items-center">
+                    <span class="mr-3">🔧</span>Komponen Komputer & Fungsinya
                 </h2>
-                
-                <div class="space-y-6">
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
-                        <p class="text-gray-700 leading-relaxed text-lg">
-                            <strong>Komputer</strong> adalah perangkat elektronik yang dapat menerima, memproses, menyimpan, dan mengeluarkan data secara otomatis berdasarkan instruksi yang diberikan.
-                        </p>
-                    </div>
 
+                <!-- Motherboard -->
+                <div class="mb-8 bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                        <span class="mr-3">🏗️</span>Motherboard (Papan Induk)
+                    </h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg">
-                            <h3 class="font-bold text-green-800 mb-3 flex items-center">
-                                <span class="mr-2">⚡</span>Fungsi Utama
-                            </h3>
-                            <ul class="space-y-2 text-gray-700">
-                                <li class="flex items-center"><span class="mr-2">•</span>Input (Masukan)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Process (Pemrosesan)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Output (Keluaran)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Storage (Penyimpanan)</li>
-                            </ul>
+                        <div>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Motherboard adalah papan sirkuit utama yang menghubungkan semua komponen komputer. Seperti "tulang punggung" komputer yang menyediakan jalur komunikasi antar komponen.
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-700 mb-2">Komponen Utama:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Socket CPU (tempat processor)</li>
+                                    <li>• Slot RAM (tempat memory)</li>
+                                    <li>• Slot PCIe (untuk VGA, WiFi card)</li>
+                                    <li>• Konektor SATA (untuk HDD/SSD)</li>
+                                    <li>• Port I/O (USB, Audio, LAN)</li>
+                                </ul>
+                            </div>
                         </div>
-
-                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg">
-                            <h3 class="font-bold text-purple-800 mb-3 flex items-center">
-                                <span class="mr-2">🔧</span>Komponen Utama
-                            </h3>
-                            <ul class="space-y-2 text-gray-700">
-                                <li class="flex items-center"><span class="mr-2">•</span>Hardware (Perangkat Keras)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Software (Perangkat Lunak)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Brainware (Pengguna)</li>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Tips Memilih:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start"><span class="mr-2 text-green-500">✓</span>Sesuaikan socket dengan CPU yang dipilih</li>
+                                <li class="flex items-start"><span class="mr-2 text-green-500">✓</span>Perhatikan jumlah slot RAM</li>
+                                <li class="flex items-start"><span class="mr-2 text-green-500">✓</span>Pastikan ada slot PCIe untuk VGA</li>
+                                <li class="flex items-start"><span class="mr-2 text-green-500">✓</span>Cek ketersediaan port yang dibutuhkan</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Hardware Section -->
+                <!-- CPU -->
+                <div class="mb-8 bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-800 mb-4 flex items-center">
+                        <span class="mr-3">🧠</span>CPU (Central Processing Unit)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                CPU adalah "otak" komputer yang menjalankan semua instruksi dan perhitungan. Kecepatan CPU diukur dalam GHz (Gigahertz).
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-700 mb-2">Spesifikasi Penting:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• <strong>Core:</strong> Jumlah inti pemrosesan (2, 4, 6, 8+)</li>
+                                    <li>• <strong>Thread:</strong> Jalur pemrosesan virtual</li>
+                                    <li>• <strong>Clock Speed:</strong> Kecepatan dalam GHz</li>
+                                    <li>• <strong>Cache:</strong> Memory sementara CPU</li>
+                                    <li>• <strong>Socket:</strong> Jenis konektor (LGA, AM4)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-700 mb-2">Brand Populer:</h4>
+                            <div class="space-y-3">
+                                <div class="border-l-3 border-blue-400 pl-3">
+                                    <p class="font-medium text-blue-700">Intel</p>
+                                    <p class="text-xs text-gray-600">Core i3, i5, i7, i9</p>
+                                </div>
+                                <div class="border-l-3 border-red-400 pl-3">
+                                    <p class="font-medium text-red-700">AMD</p>
+                                    <p class="text-xs text-gray-600">Ryzen 3, 5, 7, 9</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RAM -->
+                <div class="mb-8 bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
+                        <span class="mr-3">💾</span>RAM (Random Access Memory)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                RAM adalah memory sementara yang menyimpan data yang sedang digunakan. Semakin besar RAM, semakin banyak program yang bisa berjalan bersamaan.
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-700 mb-2">Jenis RAM:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• <strong>DDR4:</strong> Standard saat ini (2133-3200 MHz)</li>
+                                    <li>• <strong>DDR5:</strong> Generasi terbaru (4800+ MHz)</li>
+                                    <li>• <strong>Kapasitas:</strong> 4GB, 8GB, 16GB, 32GB+</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Rekomendasi Kapasitas:</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>Office/Browsing</span>
+                                    <span class="font-medium text-green-600">8GB</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>Gaming</span>
+                                    <span class="font-medium text-green-600">16GB</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>Content Creation</span>
+                                    <span class="font-medium text-green-600">32GB+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storage -->
+                <div class="mb-8 bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-4 flex items-center">
+                        <span class="mr-3">💿</span>Storage (Penyimpanan)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-purple-700 mb-2 flex items-center">
+                                    <span class="mr-2">⚡</span>SSD (Solid State Drive)
+                                </h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Kecepatan baca/tulis sangat cepat</li>
+                                    <li>• Tidak ada bagian bergerak</li>
+                                    <li>• Lebih tahan lama dan hemat daya</li>
+                                    <li>• Harga lebih mahal per GB</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-purple-700 mb-2 flex items-center">
+                                    <span class="mr-2">🔄</span>HDD (Hard Disk Drive)
+                                </h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Kapasitas besar dengan harga murah</li>
+                                    <li>• Kecepatan lebih lambat dari SSD</li>
+                                    <li>• Ada bagian bergerak (piringan)</li>
+                                    <li>• Cocok untuk penyimpanan data besar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 mb-2">Rekomendasi Setup:</h4>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-purple-50 rounded-lg">
+                                    <p class="font-medium text-purple-800">Budget Setup</p>
+                                    <p class="text-sm text-gray-600">SSD 256GB untuk OS + HDD 1TB untuk data</p>
+                                </div>
+                                <div class="p-3 bg-purple-50 rounded-lg">
+                                    <p class="font-medium text-purple-800">Optimal Setup</p>
+                                    <p class="text-sm text-gray-600">SSD 512GB untuk OS & program + HDD 2TB untuk data</p>
+                                </div>
+                                <div class="p-3 bg-purple-50 rounded-lg">
+                                    <p class="font-medium text-purple-800">Premium Setup</p>
+                                    <p class="text-sm text-gray-600">SSD 1TB NVMe untuk semua kebutuhan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GPU -->
+                <div class="mb-8 bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-4 flex items-center">
+                        <span class="mr-3">🎮</span>GPU/VGA (Graphics Processing Unit)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                GPU bertanggung jawab untuk memproses grafik dan visual. Ada yang terintegrasi di CPU (integrated) dan ada yang terpisah (dedicated).
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-700 mb-2">Jenis GPU:</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="p-2 bg-gray-50 rounded">
+                                        <p class="font-medium">Integrated GPU</p>
+                                        <p class="text-gray-600">Built-in di CPU, cukup untuk office & browsing</p>
+                                    </div>
+                                    <div class="p-2 bg-gray-50 rounded">
+                                        <p class="font-medium">Dedicated GPU</p>
+                                        <p class="text-gray-600">Kartu grafis terpisah, untuk gaming & rendering</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-700 mb-2">Brand Populer:</h4>
+                            <div class="space-y-3">
+                                <div class="border-l-3 border-green-400 pl-3">
+                                    <p class="font-medium text-green-700">NVIDIA</p>
+                                    <p class="text-xs text-gray-600">GeForce RTX/GTX series</p>
+                                </div>
+                                <div class="border-l-3 border-red-400 pl-3">
+                                    <p class="font-medium text-red-700">AMD</p>
+                                    <p class="text-xs text-gray-600">Radeon RX series</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-3 bg-yellow-50 rounded-lg">
+                                <p class="text-sm text-gray-700"><strong>Tips:</strong> Untuk gaming 1080p, pilih GPU mid-range. Untuk 4K atau content creation, pilih GPU high-end.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PSU -->
+                <div class="mb-8 bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-4 flex items-center">
+                        <span class="mr-3">⚡</span>PSU (Power Supply Unit)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                PSU mengubah listrik AC dari rumah menjadi DC yang dibutuhkan komponen komputer. Kualitas PSU sangat penting untuk stabilitas sistem.
+                            </p>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-orange-700 mb-2">Rating Efisiensi:</h4>
+                                <div class="space-y-1 text-sm">
+                                    <div class="flex justify-between items-center">
+                                        <span>80+ White</span>
+                                        <span class="text-gray-600">80% efisiensi</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span>80+ Bronze</span>
+                                        <span class="text-yellow-600">82-85% efisiensi</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span>80+ Gold</span>
+                                        <span class="text-yellow-500">87-90% efisiensi</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span>80+ Platinum</span>
+                                        <span class="text-gray-400">90-92% efisiensi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 mb-2">Kalkulasi Wattage:</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>Office PC</span>
+                                    <span class="font-medium text-orange-600">300-450W</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>Gaming PC</span>
+                                    <span class="font-medium text-orange-600">550-750W</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>High-end PC</span>
+                                    <span class="font-medium text-orange-600">850W+</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-3 bg-orange-50 rounded-lg">
+                                <p class="text-sm text-gray-700"><strong>Tips:</strong> Pilih PSU dengan wattage 20-30% lebih tinggi dari kebutuhan untuk efisiensi optimal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case & Cooling -->
+                <div class="bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-xl border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-4 flex items-center">
+                        <span class="mr-3">🏠</span>Case & Cooling System
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-teal-700 mb-2">Case (Casing)</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• <strong>Form Factor:</strong> ATX, Micro-ATX, Mini-ITX</li>
+                                    <li>• <strong>Airflow:</strong> Ventilasi yang baik</li>
+                                    <li>• <strong>Cable Management:</strong> Ruang untuk kabel</li>
+                                    <li>• <strong>Expansion:</strong> Slot untuk drive tambahan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-teal-700 mb-2">Cooling System</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="p-2 bg-gray-50 rounded">
+                                        <p class="font-medium">Air Cooling</p>
+                                        <p class="text-gray-600">Heatsink + Fan, murah & reliable</p>
+                                    </div>
+                                    <div class="p-2 bg-gray-50 rounded">
+                                        <p class="font-medium">Liquid Cooling</p>
+                                        <p class="text-gray-600">AIO/Custom loop, cooling lebih baik</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instalasi Section -->
+        <div id="instalasi-section" class="hidden">
             <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
-                    <span class="mr-3">🔩</span>Hardware (Perangkat Keras)
+                <h2 class="text-3xl font-bold text-indigo-700 mb-8 flex items-center">
+                    <span class="mr-3">⚙️</span>Panduan Instalasi Komputer
                 </h2>
 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-red-50 p-5 rounded-lg border border-red-200">
-                        <div class="text-3xl mb-3">🖱️</div>
-                        <h3 class="font-bold text-red-800 mb-2">Input Device</h3>
-                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk memasukkan data</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Keyboard</li>
-                            <li>• Mouse</li>
-                            <li>• Microphone</li>
-                            <li>• Scanner</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-yellow-50 p-5 rounded-lg border border-yellow-200">
-                        <div class="text-3xl mb-3">🧠</div>
-                        <h3 class="font-bold text-yellow-800 mb-2">Processing Unit</h3>
-                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk memproses data</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• CPU (Processor)</li>
-                            <li>• RAM (Memory)</li>
-                            <li>• Motherboard</li>
-                            <li>• GPU (VGA Card)</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-green-50 p-5 rounded-lg border border-green-200">
-                        <div class="text-3xl mb-3">🖥️</div>
-                        <h3 class="font-bold text-green-800 mb-2">Output Device</h3>
-                        <p class="text-sm text-gray-600 mb-3">Perangkat untuk mengeluarkan hasil</p>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Monitor</li>
-                            <li>• Printer</li>
-                            <li>• Speaker</li>
-                            <li>• Projector</li>
-                        </ul>
-                    </div>
+                <div class="mb-8 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
+                    <h3 class="font-bold text-yellow-800 mb-2 flex items-center">
+                        <span class="mr-2">⚠️</span>Persiapan Sebelum Instalasi
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="mr-2 text-yellow-500">•</span>Siapkan tools: obeng Phillips, anti-static wrist strap (opsional)</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-500">•</span>Baca manual motherboard dan komponen lainnya</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-500">•</span>Pastikan area kerja bersih dan terang</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-500">•</span>Lepaskan listrik statis dengan menyentuh logam</li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- Software Section -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
-                    <span class="mr-3">💿</span>Software (Perangkat Lunak)
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-4">
-                        <div class="bg-blue-50 p-5 rounded-lg">
-                            <h3 class="font-bold text-blue-800 mb-3 flex items-center">
-                                <span class="mr-2">🏗️</span>System Software
-                            </h3>
-                            <ul class="text-gray-700 space-y-2">
-                                <li class="flex items-center"><span class="mr-2">•</span>Operating System (Windows, macOS, Linux)</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Device Drivers</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Utilities</li>
-                            </ul>
+                <!-- Step by Step Installation -->
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="step-line bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-blue-800 mb-3">Persiapan Case & Motherboard</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-semibold text-blue-700 mb-2">Persiapan Case:</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Buka kedua sisi panel case</li>
+                                            <li>• Lepas standoff yang tidak perlu</li>
+                                            <li>• Pasang I/O shield motherboard ke case</li>
+                                            <li>• Siapkan kabel power dan data</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-blue-700 mb-2">Persiapan Motherboard:</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Keluarkan motherboard dari box</li>
+                                            <li>• Letakkan di atas anti-static bag</li>
+                                            <li>• Periksa socket dan slot</li>
+                                            <li>• Baca diagram pin header</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="space-y-4">
-                        <div class="bg-orange-50 p-5 rounded-lg">
-                            <h3 class="font-bold text-orange-800 mb-3 flex items-center">
-                                <span class="mr-2">📱</span>Application Software
-                            </h3>
-                            <ul class="text-gray-700 space-y-2">
-                                <li class="flex items-center"><span class="mr-2">•</span>Microsoft Office</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Web Browser</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Games</li>
-                                <li class="flex items-center"><span class="mr-2">•</span>Media Player</li>
-                            </ul>
+                    <!-- Step 2 -->
+                    <div class="step-line bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-red-800 mb-3">Instalasi CPU & Cooler</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-red-700 mb-2">Memasang CPU:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Buka socket CPU dengan mengangkat retention arm</li>
+                                            <li>Keluarkan CPU dari kemasan (jangan sentuh pin/contact)</li>
+                                            <li>Sejajarkan tanda segitiga pada CPU dengan socket</li>
+                                            <li>Letakkan CPU dengan lembut (jangan ditekan)</li>
+                                            <li>Turunkan retention arm untuk mengunci</li>
+                                        </ol>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-red-700 mb-2">Memasang Cooler:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Oleskan thermal paste tipis dan merata (jika perlu)</li>
+                                            <li>Pasang mounting bracket sesuai socket</li>
+                                            <li>Letakkan heatsink di atas CPU</li>
+                                            <li>Kencangkan sekrup secara diagonal dan bertahap</li>
+                                            <li>Hubungkan kabel fan ke header CPU_FAN</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-line bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start">
+                            <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-green-800 mb-3">Instalasi RAM</h3>
+                                <div class="bg-white p-4 rounded-lg">
+                                    <ol class="space-y-2 text-sm text-gray-600 list-decimal list-inside">
+                                        <li>Buka clip pengunci slot RAM</li>
+                                        <li>Periksa notch (lekukan) pada RAM dan slot</li>
+                                        <li>Untuk dual channel, gunakan slot 2 & 4 (biasanya berwarna sama)</li>
+                                        <li>Masukkan RAM dengan sudut 90° hingga clip mengunci otomatis</li>
+                                        <li>Pastikan RAM terpasang rata dan kencang</li>
+                                    </ol>
+                                    <div class="mt-3 p-3 bg-green-50 rounded-lg">
+                                        <p class="text-sm text-green-700"><strong>Tips:</strong> RAM membutuhkan sedikit tenaga untuk masuk. Jika sulit, periksa orientasi dan jangan dipaksa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-line bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-purple-800 mb-3">Instalasi Storage (SSD/HDD)</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 mb-2">M.2 SSD:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Cari slot M.2 di motherboard</li>
+                                            <li>Lepas sekrup mounting</li>
+                                            <li>Masukkan SSD dengan sudut 30°</li>
+                                            <li>Tekan ke bawah dan kencangkan sekrup</li>
+                                        </ol>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-700 mb-2">SATA SSD/HDD:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Pasang drive ke bracket case</li>
+                                            <li>Kencangkan dengan sekrup</li>
+                                            <li>Hubungkan kabel SATA data ke motherboard</li>
+                                            <li>Hubungkan kabel SATA power dari PSU</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step-line bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">5</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-yellow-800 mb-3">Instalasi GPU (Jika Ada)</h3>
+                                <div class="bg-white p-4 rounded-lg">
+                                    <ol class="space-y-2 text-sm text-gray-600 list-decimal list-inside">
+                                        <li>Lepas slot cover PCIe di case yang sesuai</li>
+                                        <li>Buka clip pengunci slot PCIe x16 (slot teratas)</li>
+                                        <li>Masukkan GPU hingga terdengar klik</li>
+                                        <li>Kencangkan bracket GPU ke case dengan sekrup</li>
+                                        <li>Hubungkan kabel power PCIe dari PSU (jika diperlukan)</li>
+                                    </ol>
+                                    <div class="mt-3 p-3 bg-yellow-50 rounded-lg">
+                                        <p class="text-sm text-yellow-700"><strong>Penting:</strong> GPU high-end membutuhkan kabel power 6-pin atau 8-pin dari PSU.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="step-line bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-start">
+                            <div class="bg-orange-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">6</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-orange-800 mb-3">Instalasi PSU & Kabel</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Memasang PSU:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Tentukan orientasi fan PSU (ke bawah jika case ada filter)</li>
+                                            <li>Masukkan PSU ke compartment</li>
+                                            <li>Kencangkan dengan 4 sekrup dari belakang case</li>
+                                        </ol>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Koneksi Kabel Utama:</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• <strong>24-pin ATX:</strong> Power utama motherboard</li>
+                                            <li>• <strong>8-pin CPU:</strong> Power CPU (kiri atas motherboard)</li>
+                                            <li>• <strong>PCIe 6/8-pin:</strong> Power GPU (jika ada)</li>
+                                            <li>• <strong>SATA Power:</strong> Power untuk SSD/HDD</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div class="step-line bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-xl border-l-4 border-teal-500">
+                        <div class="flex items-start">
+                            <div class="bg-teal-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">7</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-teal-800 mb-3">Koneksi Front Panel & Final Check</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-teal-700 mb-2">Front Panel Connectors:</h4>
+                                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                                            <div>• Power Button</div>
+                                            <div>• Reset Button</div>
+                                            <div>• Power LED</div>
+                                            <div>• HDD LED</div>
+                                            <div>• USB Headers</div>
+                                            <div>• Audio Headers</div>
+                                        </div>
+                                        <p class="text-xs text-gray-500 mt-2">*Lihat diagram di manual motherboard untuk posisi yang tepat</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-teal-700 mb-2">Final Check:</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>✓ Semua kabel power terpasang</li>
+                                            <li>✓ RAM terkunci dengan benar</li>
+                                            <li>✓ GPU terpasang kencang</li>
+                                            <li>✓ Tidak ada sekrup yang tertinggal</li>
+                                            <li>✓ Cable management rapi</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 8 -->
+                    <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 p-6 rounded-xl border-l-4 border-indigo-500">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">8</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-indigo-800 mb-3">First Boot & BIOS Setup</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-indigo-700 mb-2">Langkah First Boot:</h4>
+                                        <ol class="space-y-1 text-sm text-gray-600 list-decimal list-inside">
+                                            <li>Hubungkan monitor ke GPU (bukan motherboard)</li>
+                                            <li>Hubungkan keyboard dan mouse</li>
+                                            <li>Colokkan kabel power dan nyalakan PSU</li>
+                                            <li>Tekan tombol power case</li>
+                                            <li>Masuk BIOS dengan menekan Del/F2 saat booting</li>
+                                        </ol>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg">
+                                        <h4 class="font-semibold text-indigo-700 mb-2">Setting BIOS Penting:</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Enable XMP/DOCP untuk RAM</li>
+                                            <li>• Set boot priority (USB untuk install OS)</li>
+                                            <li>• Check temperature CPU & fan speed</li>
+                                            <li>• Enable UEFI mode</li>
+                                            <li>• Save & Exit</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshoot Section -->
+        <div id="troubleshoot-section" class="hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-6">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-8 flex items-center">
+                    <span class="mr-3">🔍</span>Troubleshooting & Tips
+                </h2>
+
+                <!-- Common Problems -->
+                <div class="space-y-6">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                            <span class="mr-2">❌</span>Komputer Tidak Menyala
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-2">Kemungkinan Penyebab:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• PSU tidak nyala atau rusak</li>
+                                    <li>• Kabel power tidak terpasang</li>
+                                    <li>• Front panel connector salah</li>
+                                    <li>• RAM tidak terpasang dengan benar</li>
+                                    <li>• Short circuit di motherboard</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-2">Solusi:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Cek switch PSU (posisi ON)</li>
+                                    <li>• Pastikan kabel 24-pin & 8-pin CPU terpasang</li>
+                                    <li>• Periksa koneksi power button</li>
+                                    <li>• Lepas dan pasang ulang RAM</li>
+                                    <li>• Test dengan 1 stick RAM saja</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-yellow-800 mb-4 flex items-center">
+                            <span class="mr-2">⚠️</span>Nyala Tapi Tidak Ada Display
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-yellow-700 mb-2">Kemungkinan Penyebab:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Monitor terhubung ke motherboard bukan GPU</li>
+                                    <li>• RAM tidak terdeteksi</li>
+                                    <li>• GPU tidak terpasang dengan benar</li>
+                                    <li>• CPU atau motherboard bermasalah</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-yellow-700 mb-2">Solusi:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Hubungkan monitor ke port GPU</li>
+                                    <li>• Reseat RAM (lepas dan pasang ulang)</li>
+                                    <li>• Coba 1 stick RAM di slot berbeda</li>
+                                    <li>• Pastikan GPU terkunci di slot PCIe</li>
+                                    <li>• Clear CMOS jika perlu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                            <span class="mr-2">🌡️</span>Overheating Issues
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700 mb-2">Gejala:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Komputer restart sendiri</li>
+                                    <li>• Performance menurun drastis</li>
+                                    <li>• Fan berputar sangat kencang</li>
+                                    <li>• Blue screen atau freeze</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-700 mb-2">Solusi:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Bersihkan debu dari heatsink dan fan</li>
+                                    <li>• Ganti thermal paste CPU</li>
+                                    <li>• Tambah case fan untuk airflow</li>
+                                    <li>• Periksa mounting cooler CPU</li>
+                                    <li>• Monitor temperature dengan software</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                            <span class="mr-2">💡</span>Tips Maintenance
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-green-700 mb-2">Maintenance Rutin:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• Bersihkan debu setiap 3-6 bulan</li>
+                                    <li>• Monitor temperature secara berkala</li>
+                                    <li>• Update driver dan BIOS</li>
+                                    <li>• Backup data penting</li>
+                                    <li>• Check kabel dan koneksi</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-green-700 mb-2">Tools yang Berguna:</h4>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li>• HWiNFO64 (monitoring hardware)</li>
+                                    <li>• MSI Afterburner (GPU monitoring)</li>
+                                    <li>• CrystalDiskInfo (health SSD/HDD)</li>
+                                    <li>• Compressed air (pembersih debu)</li>
+                                    <li>• Thermal paste berkualitas</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,18 +744,18 @@
         <!-- Kuis Section -->
         <div id="kuis-section" class="hidden">
             <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
-                    <span class="mr-3">🎯</span>Kuis Komputer
+                <h2 class="text-3xl font-bold text-indigo-700 mb-8 flex items-center">
+                    <span class="mr-3">🎯</span>Kuis Komprehensif Komputer
                 </h2>
 
                 <div id="quiz-container">
                     <div class="mb-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm font-medium text-gray-600">Pertanyaan <span id="current-question">1</span> dari <span id="total-questions">5</span></span>
+                            <span class="text-sm font-medium text-gray-600">Pertanyaan <span id="current-question">1</span> dari <span id="total-questions">15</span></span>
                             <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Skor: <span id="score">0</span></span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-purple-600 h-3 rounded-full transition-all duration-300" style="width: 6.67%"></div>
                         </div>
                     </div>
 
@@ -189,59 +765,114 @@
                     </div>
 
                     <div class="flex justify-between">
-                        <button id="prev-btn" onclick="previousQuestion()" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition-all disabled:opacity-50" disabled>
+                        <button id="prev-btn" onclick="previousQuestion()" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition-all disabled:opacity-50" disabled>
                             ← Sebelumnya
                         </button>
-                        <button id="next-btn" onclick="nextQuestion()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50" disabled>
+                        <button id="next-btn" onclick="nextQuestion()" class="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50" disabled>
                             Selanjutnya →
                         </button>
                     </div>
                 </div>
 
                 <div id="result-container" class="hidden text-center">
-                    <div class="mb-6">
-                        <div id="result-icon" class="text-6xl mb-4"></div>
-                        <h3 id="result-title" class="text-2xl font-bold mb-2"></h3>
-                        <p id="result-message" class="text-gray-600 mb-4"></p>
-                        <div class="bg-gray-50 rounded-lg p-4 inline-block">
-                            <span class="text-lg font-semibold">Skor Akhir: </span>
-                            <span id="final-score" class="text-2xl font-bold text-indigo-600"></span>
+                    <div class="mb-8">
+                        <div id="result-icon" class="text-8xl mb-4"></div>
+                        <h3 id="result-title" class="text-3xl font-bold mb-3"></h3>
+                        <p id="result-message" class="text-gray-600 mb-6 text-lg"></p>
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 inline-block">
+                            <span class="text-xl font-semibold text-gray-700">Skor Akhir: </span>
+                            <span id="final-score" class="text-3xl font-bold text-indigo-600"></span>
                         </div>
                     </div>
-                    <button onclick="restartQuiz()" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all">
-                        🔄 Ulangi Kuis
-                    </button>
+                    <div class="space-x-4">
+                        <button onclick="restartQuiz()" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all">
+                            🔄 Ulangi Kuis
+                        </button>
+                        <button onclick="showSection('komponen')" class="px-8 py-3 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition-all">
+                            📚 Kembali ke Materi
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Quiz data
+        // Extended Quiz Data
         const quizData = [
             {
-                question: "Apa kepanjangan dari CPU?",
-                options: ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
-                correct: 0
+                question: "Apa fungsi utama motherboard dalam sistem komputer?",
+                options: ["Memproses data", "Menghubungkan semua komponen", "Menyimpan data", "Menampilkan gambar"],
+                correct: 1
             },
             {
-                question: "Manakah yang termasuk perangkat input?",
-                options: ["Monitor", "Printer", "Keyboard", "Speaker"],
+                question: "Socket CPU LGA 1700 digunakan untuk processor generasi berapa dari Intel?",
+                options: ["10th gen", "11th gen", "12th gen dan 13th gen", "14th gen"],
                 correct: 2
             },
             {
-                question: "RAM adalah singkatan dari?",
-                options: ["Read Access Memory", "Random Access Memory", "Rapid Access Memory", "Real Access Memory"],
+                question: "Berapa jumlah pin pada konektor power utama motherboard modern?",
+                options: ["20-pin", "24-pin", "28-pin", "32-pin"],
                 correct: 1
             },
             {
-                question: "Manakah yang termasuk sistem operasi?",
-                options: ["Microsoft Word", "Windows", "Google Chrome", "Adobe Photoshop"],
+                question: "Apa perbedaan utama antara DDR4 dan DDR5 RAM?",
+                options: ["Ukuran fisik", "Kecepatan dan efisiensi", "Warna", "Bentuk slot"],
                 correct: 1
             },
             {
-                question: "Perangkat yang berfungsi untuk menampilkan hasil output adalah?",
-                options: ["Mouse", "Keyboard", "Monitor", "CPU"],
+                question: "Untuk gaming 1080p, berapa kapasitas RAM yang direkomendasikan?",
+                options: ["4GB", "8GB", "16GB", "32GB"],
+                correct: 2
+            },
+            {
+                question: "Apa keuntungan utama SSD dibandingkan HDD?",
+                options: ["Kapasitas lebih besar", "Harga lebih murah", "Kecepatan akses lebih cepat", "Lebih tahan lama"],
+                correct: 2
+            },
+            {
+                question: "Interface mana yang paling cepat untuk SSD?",
+                options: ["SATA III", "M.2 SATA", "M.2 NVMe", "USB 3.0"],
+                correct: 2
+            },
+            {
+                question: "Apa yang dimaksud dengan rating 80+ Gold pada PSU?",
+                options: ["Warna casing", "Efisiensi energi 87-90%", "Garansi 5 tahun", "Kualitas kabel"],
+                correct: 1
+            },
+            {
+                question: "Berapa wattage PSU yang direkomendasikan untuk gaming PC dengan RTX 4070?",
+                options: ["450W", "550W", "650W", "850W"],
+                correct: 2
+            },
+            {
+                question: "Apa yang harus dilakukan pertama kali saat komputer tidak menyala?",
+                options: ["Ganti motherboard", "Cek switch PSU dan kabel power", "Install ulang Windows", "Ganti RAM"],
+                correct: 1
+            },
+            {
+                question: "Mengapa monitor harus dihubungkan ke GPU bukan motherboard saat menggunakan dedicated graphics card?",
+                options: ["Lebih aman", "Integrated graphics otomatis nonaktif", "Kualitas gambar lebih baik", "Hemat listrik"],
+                correct: 1
+            },
+            {
+                question: "Apa fungsi thermal paste pada CPU cooler?",
+                options: ["Merekatkan heatsink", "Mengalirkan listrik", "Mentransfer panas dengan efisien", "Mencegah korosi"],
+                correct: 2
+            },
+            {
+                question: "Slot PCIe x16 pada motherboard digunakan untuk?",
+                options: ["RAM", "SSD", "Graphics card", "WiFi card"],
+                correct: 2
+            },
+            {
+                question: "Apa yang dimaksud dengan XMP pada RAM?",
+                options: ["Extreme Memory Profile untuk overclock otomatis", "Extended Memory Protection", "Extra Memory Power", "External Memory Port"],
+                correct: 0
+            },
+            {
+                question: "Urutan yang benar saat memasang komponen adalah?",
+                options: ["PSU → CPU → RAM → GPU → Storage", "CPU → RAM → Storage → GPU → PSU", "Motherboard → CPU → RAM → Storage → GPU → PSU", "RAM → CPU → GPU → Storage → PSU"],
                 correct: 2
             }
         ];
@@ -251,29 +882,29 @@
         let userAnswers = [];
 
         function showSection(section) {
-            const materiSection = document.getElementById('materi-section');
-            const kuisSection = document.getElementById('kuis-section');
-            const btnMateri = document.getElementById('btn-materi');
-            const btnKuis = document.getElementById('btn-kuis');
+            // Hide all sections
+            document.getElementById('komponen-section').classList.add('hidden');
+            document.getElementById('instalasi-section').classList.add('hidden');
+            document.getElementById('troubleshoot-section').classList.add('hidden');
+            document.getElementById('kuis-section').classList.add('hidden');
 
-            if (section === 'materi') {
-                materiSection.classList.remove('hidden');
-                kuisSection.classList.add('hidden');
-                btnMateri.classList.add('bg-indigo-600', 'text-white');
-                btnMateri.classList.remove('text-indigo-600', 'hover:bg-indigo-50');
-                btnKuis.classList.remove('bg-indigo-600', 'text-white');
-                btnKuis.classList.add('text-indigo-600', 'hover:bg-indigo-50');
-            } else {
-                materiSection.classList.add('hidden');
-                kuisSection.classList.remove('hidden');
-                btnKuis.classList.add('bg-indigo-600', 'text-white');
-                btnKuis.classList.remove('text-indigo-600', 'hover:bg-indigo-50');
-                btnMateri.classList.remove('bg-indigo-600', 'text-white');
-                btnMateri.classList.add('text-indigo-600', 'hover:bg-indigo-50');
-                
-                if (currentQuestionIndex === 0 && userAnswers.length === 0) {
-                    loadQuestion();
-                }
+            // Reset all buttons
+            const buttons = ['btn-komponen', 'btn-instalasi', 'btn-troubleshoot', 'btn-kuis'];
+            buttons.forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('text-indigo-600', 'hover:bg-indigo-50');
+            });
+
+            // Show selected section and highlight button
+            document.getElementById(section + '-section').classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + section);
+            activeBtn.classList.add('bg-indigo-600', 'text-white');
+            activeBtn.classList.remove('text-indigo-600', 'hover:bg-indigo-50');
+
+            // Initialize quiz if needed
+            if (section === 'kuis' && currentQuestionIndex === 0 && userAnswers.length === 0) {
+                loadQuestion();
             }
         }
 
@@ -294,7 +925,7 @@
                 optionDiv.className = 'option-item';
                 optionDiv.innerHTML = `
                     <button onclick="selectAnswer(${index})" class="w-full text-left p-4 border-2 border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-indigo-50 transition-all option-btn" data-index="${index}">
-                        <span class="font-medium">${String.fromCharCode(65 + index)}.</span> ${option}
+                        <span class="font-medium text-indigo-600">${String.fromCharCode(65 + index)}.</span> ${option}
                     </button>
                 `;
                 optionsContainer.appendChild(optionDiv);
@@ -311,14 +942,14 @@
         function selectAnswer(answerIndex, updateArray = true) {
             // Remove previous selection
             document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.classList.remove('border-indigo-500', 'bg-indigo-100');
+                btn.classList.remove('border-indigo-500', 'bg-indigo-100', 'ring-2', 'ring-indigo-200');
                 btn.classList.add('border-gray-200');
             });
 
             // Add selection to clicked option
             const selectedBtn = document.querySelector(`[data-index="${answerIndex}"]`);
             selectedBtn.classList.remove('border-gray-200');
-            selectedBtn.classList.add('border-indigo-500', 'bg-indigo-100');
+            selectedBtn.classList.add('border-indigo-500', 'bg-indigo-100', 'ring-2', 'ring-indigo-200');
 
             if (updateArray) {
                 userAnswers[currentQuestionIndex] = answerIndex;
@@ -382,21 +1013,31 @@
 
             const percentage = (score / quizData.length) * 100;
 
-            if (percentage >= 80) {
+            if (percentage >= 90) {
+                resultIcon.textContent = '🏆';
+                resultTitle.textContent = 'Master Komputer!';
+                resultTitle.className = 'text-3xl font-bold mb-3 text-yellow-600';
+                resultMessage.textContent = 'Luar biasa! Anda memiliki pemahaman mendalam tentang komputer dan siap merakit PC sendiri!';
+            } else if (percentage >= 80) {
                 resultIcon.textContent = '🎉';
-                resultTitle.textContent = 'Luar Biasa!';
-                resultTitle.className = 'text-2xl font-bold mb-2 text-green-600';
-                resultMessage.textContent = 'Anda memiliki pemahaman yang sangat baik tentang komputer!';
-            } else if (percentage >= 60) {
+                resultTitle.textContent = 'Sangat Baik!';
+                resultTitle.className = 'text-3xl font-bold mb-3 text-green-600';
+                resultMessage.textContent = 'Excellent! Pemahaman Anda tentang komputer sangat baik. Anda siap untuk merakit komputer!';
+            } else if (percentage >= 70) {
                 resultIcon.textContent = '👍';
                 resultTitle.textContent = 'Bagus!';
-                resultTitle.className = 'text-2xl font-bold mb-2 text-blue-600';
-                resultMessage.textContent = 'Pemahaman Anda tentang komputer cukup baik. Terus belajar!';
+                resultTitle.className = 'text-3xl font-bold mb-3 text-blue-600';
+                resultMessage.textContent = 'Good job! Pemahaman Anda cukup baik. Pelajari lagi beberapa detail teknis.';
+            } else if (percentage >= 60) {
+                resultIcon.textContent = '📖';
+                resultTitle.textContent = 'Cukup Baik';
+                resultTitle.className = 'text-3xl font-bold mb-3 text-orange-600';
+                resultMessage.textContent = 'Tidak buruk! Masih perlu belajar lebih dalam tentang komponen dan instalasi.';
             } else {
                 resultIcon.textContent = '📚';
                 resultTitle.textContent = 'Perlu Belajar Lagi';
-                resultTitle.className = 'text-2xl font-bold mb-2 text-orange-600';
-                resultMessage.textContent = 'Jangan menyerah! Baca kembali materi dan coba lagi.';
+                resultTitle.className = 'text-3xl font-bold mb-3 text-red-600';
+                resultMessage.textContent = 'Jangan menyerah! Baca kembali materi dengan teliti dan coba lagi. Practice makes perfect!';
             }
         }
 
@@ -414,8 +1055,8 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            showSection('materi');
+            showSection('komponen');
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974f183d922e604a',t:'MTc1NjE2NjkwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974f250a043f3e02',t:'MTc1NjE2NzQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
